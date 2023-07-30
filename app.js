@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const TestController  = require('./controllers/TestController');
+app.use('/controller', TestController);
 const HumanRoute = require('./routes/Human');
 app.use('/Human', HumanRoute);
 
